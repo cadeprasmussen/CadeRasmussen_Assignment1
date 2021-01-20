@@ -1,0 +1,82 @@
+﻿body.myBody {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+
+    background-image: url('../img/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+div {
+    border: solid black;
+    border-width: medium;
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    background-color: rgba(109, 109, 109, 0.80);
+}
+
+.submit {
+    border-radius: 40px;
+    color: white;
+    background-color: black;
+    border-color: black;
+    font-size: 30px;
+}
+
+.submit:hover {
+    background-color: grey;
+    
+}
+
+.submit:active {
+   transform: translateY(4px);
+}
+
+form {
+    width: auto;
+}
+
+input[type='submit']
+{
+
+    margin: 0 auto;
+}
+
+img {
+    box-shadow: 4px 4px 20px;
+}
+
+label {
+    font-size: 20px;
+    width: 125px;
+    display: inline-block;
+}
+
+ul.myUL {
+    list-style-type: none;
+}
+
+h4 {
+   font-weight: bolder;
+   font-size: 2rem;
+}
+
+h2 {
+    margin: 0;
+    margin-top: 10px
+}
+
+p {
+    word-wrap: normal;
+    width: 400px;
+}
