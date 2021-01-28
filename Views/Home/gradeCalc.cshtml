@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Grade Calculator";
+}
+
+@model gradeCalcModel
+
+<body>
+    <h4>Grade Calculator</h4>
+
+    @* Accepting the data into the form to be s*@
+    <form method="post">
+        <label for="assignment">Assignments</label>
+        <input type="number" id="assignment" asp-for="assignment" min="0" max="100" /> %
+        <br />
+        <label for="project">Group Project</label>
+        <input type="number" id="project" asp-for="project" min="0" max="100" /> %
+        <br />
+        <label for="quiz">Quizzes</label>
+        <input type="number" id="quiz" asp-for="quiz" min="0" max="100" /> %
+        <br />
+        <label for="exam">Exams</label>
+        <input type="number" id="exam" asp-for="exam" min="0" max="100" /> %
+        <br />
+        <label for="intex">Intex</label>
+        <input type="number" id="intex" asp-for="intex" min="0" max="100" /> %
+        <br /><br />
+        <input type="submit" value="Calulate Grade" id="submit" class="submit" name="submit" />
+        <div asp-validation-summary="All"></div>
+    </form>
+    <h2 id="estGrade">Estimated Grade: </h2>
+    <h2 id="gradeLetter"></h2>
+    <h3 id="percent"></h3>
+
+
+    <button name="reset" id="reset" class="submit" onclick="resetGrade()">Reset Grade</button>
+    <br />
+
+    <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/assignment1.js"></script>
+
+</body>

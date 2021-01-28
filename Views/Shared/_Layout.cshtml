@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+
+@*Creating a very basic shared html tempalte, for the pages to inherit
+*@<head>
+@*    USING VIEWBAG TO DISPLAY CONSTANT TITLE
+*@    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/css/main.css" rel="stylesheet" />
+    <link rel="icon" href="~/img/33nme.png" />
+
+
+</head>
+<body class="myBody">
+    <header>
+        <h1>Cade Rasmussen</h1>
+        <menu>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Home" asp-action="GradeCalc">Grade Calculator</a></li>
+            </ul>
+        </menu>
+    </header>
+
+    @RenderBody()
+
+@*    JS wouldn't transfer over to other files, placed in other cshtml files'
+*@
+
+</body>
+</html>

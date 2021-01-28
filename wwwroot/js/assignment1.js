@@ -1,14 +1,15 @@
-﻿var submit = document.getElementById("submit");
+﻿/*var submit = $("submit");*/
 var gradeLetter = "";
 var finalscore = 0;
 
-submit.addEventListener("click", function gradeCalculator() {
-    var assignment = parseInt(document.getElementById("assignment").value) * .5;
-    var project = parseInt(document.getElementById("project").value) * .1;
-    var quiz = parseInt(document.getElementById("quiz").value) * .1;
-    var exam = parseInt(document.getElementById("exam").value) * .2;
-    var intex = parseInt(document.getElementById('intex').value) * .1;
+//Declaring my event listener with jquery
 
+$("#submit").click(function () {
+    var assignment = ($("#assignment").val()) * .5;
+    var project = ($("#project").val()) * .1;
+    var quiz = ($("#quiz").val()) * .1;
+    var exam = ($("#exam").val()) * .2;
+    var intex = ($('#intex').val()) * .1;
 
     finalscore = assignment + project + quiz + exam + intex;
 
@@ -49,30 +50,34 @@ submit.addEventListener("click", function gradeCalculator() {
         gradeLetter = "E";
     }
 
-    localStorage.setItem("gradeLetter", gradeLetter);
-    localStorage.setItem("percent", finalscore);
+    //Displaying the final grade letter and score to the user. 
+    alert("You're Estimate Grade is a(n): " + gradeLetter + " \n with " + finalscore + "%" );
 
-    document.getElementById('estGrade').style.display = 'block';
-    document.getElementById('gradeLetter').style.display = 'block';
-    document.getElementById('percent').style.display = 'block';
+    //$.localStorage.setItem("gradeLetter", gradeLetter);
+    //$.localStorage.setItem("percent", finalscore);
 
-    displayData(finalscore, gradeLetter);
+    //$('#estGrade').style.display = 'block';
+    //$('#gradeLetter').style.display = 'block';
+    //$('#percent').style.display = 'block';
+
+    //displayData(finalscore, gradeLetter);
 });
 
+
 function displayData(finalGrade, gradeLetter) {
-    document.getElementById("gradeLetter").innerHTML = gradeLetter;
-    document.getElementById("percent").innerHTML = toString(finalScore) + "%";
+    $("#gradeLetter").innerHTML = gradeLetter;
+    $("#percent").innerHTML = toString(finalGrade) + "%";
 };
 
 
-addEventListener("load", function () {
-    this.document.getElementById("gradeLetter").innerHTML = this.localStorage.getItem("gradeLetter");
-    if (this.localStorage.getItem("percent") == null || this.document.getElementById("gradeLetter") == "") {
-        this.document.getElementById("percent").style.display = "none";
-        this.document.getElementById("gradeLetter").style.display = "none";
+("load", function () {
+    this.$("#gradeLetter").innerHTML = this.localStorage.getItem("#gradeLetter");
+    if (this.localStorage.getItem("percent") == null || this.$("gradeLetter") == "") {
+        this.$("#percent").style.display = "none";
+        this.$("#gradeLetter").style.display = "none";
     }
     else {
-        this.document.getElementById("percent").innerHTML = this.localStorage.getItem("percent") + " %";
+        this.$("#percent").innerHTML = this.localStorage.getItem("#percent") + " %";
     }
     
 
@@ -81,8 +86,10 @@ addEventListener("load", function () {
 
 function resetGrade() {
     localStorage.clear()
-    this.document.getElementById("gradeLetter").style.display = "none";
-    this.document.getElementById("percent").style.display = "none";
-}
+    this.$("gradeLetter").style.display = "none";
+    this.$("percent").style.display = "none";
+    };
+
+
 
 
